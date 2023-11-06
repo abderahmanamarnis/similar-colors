@@ -124,10 +124,12 @@ background: rgb(103, 24, 24);
 
 }
  .window.active{
-   width: 90vw;
-   height: 90vh;  
+   transform: scale(1);
+   
+   width: 100vw;
+   height: 100vh;  
    position: fixed; 
-   top: 1vh;
+   top: -5vh;
    left: -110%;
    z-index: 1;
    
