@@ -106,7 +106,7 @@ background: rgb(103, 24, 24);
    background-color: aqua;
    z-index: 2;
 } */
-.mask{
+/* .mask{
    position: absolute;
    bottom: 0;
    left: 0;
@@ -120,9 +120,9 @@ background: rgb(103, 24, 24);
 }
 .window.open .mask{
    bottom: 100%;
-   height: 0;
+   height: 0; */
 
-}
+/* } */
  .window.active{
    transform: scale(1);
    
@@ -131,7 +131,46 @@ background: rgb(103, 24, 24);
    position: fixed; 
    top: -5vh;
    left: -110%;
+   z-index: 2;
+}
+.window::before {
+   position: absolute;
+   top: 0%;
+   content: "";
+   width: 45.4%;
+   height: 100%;
+   background-color: red;
+   border: 2px solid black;
+   transform-origin: 0% 0%;
+   transition: 1s;
    z-index: 1;
-   
-  
+}
+.window::after {
+   position: absolute;
+   top: 0%;
+   content: "";
+   right: 0;
+   width: 45.3%;
+   height: 100%;
+   background-color:  red;
+   border: 2px solid black;
+   transform-origin: 100% 100%;
+   transition: 1s;
+   z-index: 1;
+}
+.window.active::before {
+   transform: rotateY(122deg);
+}
+
+.window.active::after {
+   transform: rotateY(122deg);
+   /* z-index: 10; */
+}
+.window.open::before {
+   transform: rotateY(122deg);
+}
+
+.window.open::after {
+   transform: rotateY(122deg);
+   /* z-index: 10; */
 }
